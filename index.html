@@ -2,7 +2,7 @@
 <html lang="en"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meri Queen, Ek Baat Poochhun? ❤️👑</title>
+  <title>Meri Sleeping Beauty ❤️🌙</title>
 
   <style>
     * {
@@ -11,65 +11,66 @@
 
     body {
       margin: 0;
-      padding: 24px 14px;
+      padding: 25px 14px 45px;
       min-height: 100vh;
       font-family: "Segoe UI", Arial, sans-serif;
       text-align: center;
-      color: #7a1744;
-      background: linear-gradient(135deg, #ffe0ec, #fff0f5, #ffd6e7);
+      color: #713653;
+      background: linear-gradient(145deg, #191932, #493052, #9a617e);
       overflow-x: hidden;
     }
 
     .container {
-      max-width: 760px;
-      margin: 0 auto;
+      max-width: 850px;
+      margin: auto;
       padding: 25px 18px;
-      background: rgba(255, 255, 255, 0.84);
-      border-radius: 24px;
-      box-shadow: 0 10px 35px rgba(190, 40, 100, 0.16);
+      background: rgba(255, 245, 250, 0.96);
+      border-radius: 25px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
       position: relative;
       z-index: 1;
     }
 
     h1 {
-      color: #d63384;
-      font-size: clamp(27px, 6vw, 40px);
-      margin: 8px 0 18px;
+      color: #b34478;
+      font-size: clamp(28px, 6vw, 42px);
+      margin: 10px 0;
     }
 
-    h2 {
-      color: #c2185b;
-      font-size: 22px;
+    .subtitle {
+      color: #8e5272;
+      font-size: 17px;
     }
 
-    p {
-      line-height: 1.75;
-      font-size: 16px;
+    .moon {
+      font-size: 48px;
+      margin: 5px;
     }
 
-    .heart {
-      color: #ff4081;
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 13px;
+      margin: 28px auto;
     }
 
-    .photo-gallery {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin: 25px auto;
+    .photo-card {
+      background: white;
+      padding: 8px;
+      border-radius: 17px;
+      box-shadow: 0 5px 18px rgba(155, 66, 111, 0.18);
+      transform: rotate(-1deg);
     }
 
-    .photo-frame {
-      width: min(44%, 245px);
-      min-width: 130px;
-      padding: 10px;
-      background: #fff;
-      border-radius: 18px;
-      box-shadow: 0 5px 18px rgba(220, 70, 120, 0.2);
+    .photo-card:nth-child(2) {
+      transform: rotate(1deg);
     }
 
-    .photo {
+    .photo-card:nth-child(3) {
+      transform: rotate(-0.5deg);
+    }
+
+    .photo-card img {
       width: 100%;
       height: 260px;
       object-fit: cover;
@@ -77,137 +78,83 @@
       display: block;
     }
 
-    .photo-frame p {
-      color: #c2185b;
+    .photo-caption {
+      font-size: 13px;
       font-weight: bold;
-      font-size: 14px;
-      margin: 10px 0 2px;
+      color: #b34478;
+      margin: 10px 2px 5px;
     }
 
-    .message {
-      margin: 22px 0;
+    .love-note {
+      margin: 25px auto;
+      padding: 22px 17px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #ffe1ed, #fff5fa);
+      line-height: 1.9;
+      font-size: 17px;
     }
 
-    .question {
-      display: none;
-      margin: 28px 0;
-      padding: 20px 14px;
-      border: 2px solid #ffc0d8;
-      border-radius: 18px;
-      background: #fff8fb;
-      animation: appear 0.5s ease;
+    .love-note p {
+      margin: 13px 0;
     }
 
-    .question.active {
-      display: block;
+    .highlight {
+      color: #b52d70;
+      font-weight: bold;
+      font-size: 19px;
     }
 
-    .options {
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      gap: 10px;
-      max-width: 390px;
-      margin: 20px auto;
-      text-align: left;
-    }
-
-    .option {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 14px;
-      background: #fff;
-      border: 1px solid #f4a6c5;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.2s;
-    }
-
-    .option:hover {
-      background: #ffe5ef;
-      transform: translateY(-1px);
-    }
-
-    .option input {
-      accent-color: #d63384;
-      width: 18px;
-      height: 18px;
-      flex-shrink: 0;
-    }
-
-    button {
+    .button {
+      display: inline-block;
       border: none;
-      padding: 12px 24px;
       border-radius: 30px;
-      background: #d63384;
-      color: #fff;
+      padding: 13px 23px;
+      margin: 10px 0;
+      color: white;
+      background: #b34478;
       font-size: 16px;
       font-weight: bold;
       cursor: pointer;
-      box-shadow: 0 4px 12px rgba(214, 51, 132, 0.2);
-      transition: transform 0.2s, background 0.2s;
+      box-shadow: 0 5px 14px rgba(179, 68, 120, 0.22);
     }
 
-    button:hover {
-      background: #b82069;
-      transform: scale(1.03);
+    .button:hover {
+      background: #92305f;
     }
 
-    button:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
-
-    .final-message {
+    #secretMessage {
       display: none;
-      padding: 22px 15px;
-      margin-top: 25px;
+      margin-top: 20px;
+      padding: 20px;
       border-radius: 18px;
-      background: linear-gradient(135deg, #ffe0ec, #fff5fa);
-      animation: appear 0.7s ease;
-    }
-
-    .final-message.show {
-      display: block;
+      background: #fff;
+      line-height: 1.9;
+      animation: fadeIn 0.7s ease;
     }
 
     .signature {
-      margin-top: 24px;
-      font-size: 19px;
-      color: #c2185b;
+      margin-top: 25px;
+      color: #b34478;
+      font-size: 20px;
       font-weight: bold;
     }
 
-    .small-note {
-      color: #98516f;
-      font-size: 13px;
-    }
-
-    .floating-heart {
+    .star {
       position: fixed;
-      bottom: -30px;
-      color: rgba(255, 64, 129, 0.4);
+      top: -30px;
       pointer-events: none;
       z-index: 0;
-      animation: floatUp 8s linear infinite;
+      animation: fall linear forwards;
     }
 
-    @keyframes floatUp {
-      from {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0;
-      }
-      15% {
-        opacity: 1;
-      }
+    @keyframes fall {
       to {
-        transform: translateY(-110vh) rotate(35deg);
+        transform: translateY(110vh) rotate(360deg);
         opacity: 0;
       }
     }
 
-    @keyframes appear {
+    @keyframes fadeIn {
       from {
         opacity: 0;
         transform: translateY(12px);
@@ -218,31 +165,35 @@
       }
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 600px) {
       body {
-        padding: 12px 8px;
+        padding: 12px 8px 30px;
       }
 
       .container {
-        padding: 20px 12px;
+        padding: 20px 11px;
       }
 
-      .photo-gallery {
-        gap: 10px;
+      .gallery {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        max-width: 360px;
       }
 
-      .photo-frame {
-        width: 46%;
-        min-width: 0;
-        padding: 7px;
+      .photo-card img {
+        height: auto;
+        max-height: 420px;
+        object-fit: contain;
+        background: #fcebf3;
       }
 
-      .photo {
-        height: 190px;
+      .photo-caption {
+        font-size: 14px;
       }
 
-      p {
-        font-size: 15px;
+      .love-note {
+        padding: 19px 13px;
+        font-size: 16px;
       }
     }
   </style>
@@ -252,254 +203,127 @@
 
   <main class="container">
 
-    <h1></h1>
+    <div class="moon">🌙✨</div>
 
-    <p>
-      Meri Queen, meri favourite person, aur meri hone wali humsafar…
-      🥹💖
+    <h1>Meri Sleeping Beauty ❤️</h1>
+
+    <p class="subtitle">aapko pata bhi hai aap kitni cute hain? 🥹💕
     </p>
 
-    <!-- BOTH PHOTOS -->
-    <div class="photo-gallery">
+    <div class="gallery">
 
-      <div class="photo-frame">
-        <img src="priyanka%20_angry.jpeg" alt="Meri gusse wali Queen" class="photo">
-        <p></p>
+      <div class="photo-card">
+        <img src="sleep1.jpeg" alt="Priyanka sleeping, photo 1">
+        <p class="photo-caption">Itni si pyaari meri jaan 🥹❤️</p>
       </div>
 
-      <div class="photo-frame">
-        <img src="priyanka_2nd.jpeg" alt="Meri pyaari Priyanka" class="photo">
-        <p>Meri favourite person 💖🥹</p>
+      <div class="photo-card">
+        <img src="sleep2.jpeg" alt="Priyanka sleeping, photo 2">
+        <p class="photo-caption">Meri nanhi si sleeping beauty 🌙💗</p>
+      </div>
+
+      <div class="photo-card">
+        <img src="sleep3.jpeg" alt="Priyanka sleeping, photo 3">
+        <p class="photo-caption">Bas aise hi pyaari rahiye 🫶💕</p>
       </div>
 
     </div>
 
-    <div class="message">
-      <p>
-        Aap jab gussa karti hain na, tab aur bhi cutuu lagti hain. ❤️
+    <section class="love-note">
+
+      <p class="highlight">
+        Itna cute kaise lag sakti hain aap sote hue? 😭❤️
       </p>
 
       <p>
-        Meri Queen, itna gussa mat kiya kariye…
-        dikkat hoga aapko . utna kas ke pyar krunga wapis manane ke liye&nbsp; 😂🥹
+        Aapko aise sote hue dekhkar na, bas dil karta hai
+        ki abhi wahaan aa jaun… 🥹
       </p>
 
       <p>
-        Pata hai, main perfect nahi hoon. Kabhi bachchon jaisi harkatein
-        karta hoon, kabhi aapko pareshan bhi kar deta hoon.
-        Lekin aapko khush rakhne ki koshish dil se karta hoon. 💗
+        Aapko pyaar se hug karun, aapko apni baahon mein pakad kar
+        so jaun, aur raat bhar aapko pyaar karta rahun. 🤗❤️
       </p>
 
       <p>
-        Bas aaj aapse kuch chhoti-chhoti baatein poochhni hain.
-        Sach-sach jawab dijiyega, meri baby. 🥹❤️
+        Duniya ki saari tension ek taraf, aur aapko apne paas
+        sukoon se sota hua dekhna ek taraf. 🌙💖
       </p>
-    </div>
 
-    <!-- QUESTION 1 -->
-    <section class="question active" id="question1">
-      <h2>1. Jhel lijiyega na humko? 🥹❤️</h2>
       <p>
-        Thoda pagalpan, thodi shararatein aur dher saara pyaar…
-        sambhal lengi na? 😂💖
+        Bas aapka haath pakad kar, aapko hug karke,
+        aapki saanson ki aahat sunte hue so jaane ka mann karta hai.
+        🥹🫶
       </p>
 
-      <div class="options">
-        <label class="option">
-          <input type="radio" name="q1" value="yes">
-          Haan ji, bilkul jhel lenge ❤️
-        </label>
+      <p></p>
 
-        <label class="option">
-          <input type="radio" name="q1" value="maybe">
-          Sochna padega ji 🙈
-        </label>
+      <p class="highlight"></p>
 
-        <label class="option">
-          <input type="radio" name="q1" value="no">
-          Bilkul nahi! 😤😂
-        </label>
-      </div>
-
-      <button onclick="nextQuestion(1)">next</button>
     </section>
 
-    <!-- QUESTION 2 -->
-    <section class="question" id="question2">
-      <h2>2. Humse pyaar karti hain? ❤️🥹</h2>
-      <p>
-        Dil se batayiye, meri Queen.
-        Aapka jawab mere liye bahut special hai. 💗
-      </p>
+    <button class="button" onclick="showSecret()">
+      Ek aur baat sunengi? 🥹💌
+    </button>
 
-      <div class="options">
-        <label class="option">
-          <input type="radio" name="q2" value="yes">
-          Haan ji, bahut saara pyaar ❤️
-        </label>
+    <section id="secretMessage">
 
-        <label class="option">
-          <input type="radio" name="q2" value="more">
-          Aapko aur pyaar chahiye? 🥰
-        </label>
-
-        <label class="option">
-          <input type="radio" name="q2" value="annoyed">
-          Pehle pareshan karna band karo 😂
-        </label>
-
-        <label class="option">
-          <input type="radio" name="q2" value="no">
-          Nahi bataungi! 🙈
-        </label>
-      </div>
-
-      <button onclick="nextQuestion(2)">Agla sawaal 💖</button>
-    </section>
-
-    <!-- QUESTION 3 -->
-    <section class="question" id="question3">
-      <h2>3. Humara saath dengi na? 💍❤️</h2>
-      <p>
-        Zindagi ke har mod par ek-doosre ko samajhne,
-        sambhalne aur saath chalne ki koshish karenge? 🥹
-      </p>
-
-      <div class="options">
-        <label class="option">
-          <input type="radio" name="q3" value="yes">
-          Haan ji, hamesha saath ❤️
-        </label>
-
-        <label class="option">
-          <input type="radio" name="q3" value="try">
-          Dono milkar koshish karenge 🫶
-        </label>
-
-        <label class="option">
-          <input type="radio" name="q3" value="think">
-          Abhi sochungi 🙈
-        </label>
-      </div>
-
-      <button onclick="showFinalMessage()">Ab aakhri baat 💌</button>
-    </section>
-
-    <!-- FINAL MESSAGE -->
-    <section class="final-message" id="finalMessage">
-
-      <h2>Meri Queen, ek aakhri baat… ❤️👑</h2>
+      <h2 style="color:#b34478;">Bas aap aur main ❤️</h2>
 
       <p>
-        Aapka har jawab mere liye important hai, kyunki aapki feelings
-        bhi important hain. Main chahta hoon ki hum dono ek-doosre ko
-        samjhein, ek-doosre ki izzat karein aur khushi se saath chalein. 💗
+        Kabhi-kabhi sach mein mann karta hai ki saari dooriyan khatam
+        ho jaayein, main aapke paas baithun, aapko hug karun,
+        aur bina kuch kahe bas aapke saath waqt bitaun. 🫂💕
       </p>
 
       <p>
-        Phir bhi, ab toh aap meri apni si hain… ❤️
-        Aur hum aapko apna humsafar banane ke liye poori mohabbat se
-        koshish karte rahenge — aapki marzi, khushi aur saath ke saath. 🥹💍
+        Aapko pyaar karun, aapki baatein sunun, aapko hansaun,
+        aur aapki marzi aur comfort ka khayal rakhte hue
+        aapke saath har pal ko special banaun. ❤️
       </p>
 
       <p>
-        <strong>
-          Good! Bas yehi hausla banaye rakhna chahiye last tak! 😂❤️💍
-        </strong>
+        Kyunki mere liye pyaar sirf paas hona nahi,
+        balki aapko safe, respected aur loved feel karwana bhi hai. 🥹
       </p>
 
-      <p>
-        Aur meri Queen, please itna gussa mat kiya kariye.
-        Aapki smile bahut pyaari hai — use dekhkar mera din ban jaata hai. 🥹💕
-      </p>
-
-      <p>
-        Aap hamesha khush rahein, muskurati rahein,
-        aur jo bhi hum dono ke liye achha ho, woh pyaar aur samajhdaari
-        se milkar chunein. ❤️
-      </p>
-
-      <div class="signature">
-        Sirf aapka, aapka deewana ❤️🥹<br>
-        Happy Birthday, Meri Queen! 👑🎂
-      </div>
-
-      <p class="small-note">
-        Aapki smile = meri favourite feeling. 💖
+      <p class="highlight">
+        Meri favourite jagah? Aapke paas. ❤️👑
       </p>
 
     </section>
+
+    <div class="signature"><br></div>
 
   </main>
 
   <script>
-    function nextQuestion(current) {
-      const selected = document.querySelector(
-        'input[name="q' + current + '"]:checked'
-      );
+    function showSecret() {
+      const message = document.getElementById("secretMessage");
 
-      if (!selected) {
-        alert("Meri Queen, pehle apna jawab toh select kijiye! 🥹❤️");
-        return;
-      }
-
-      document.getElementById("question" + current)
-        .classList.remove("active");
-
-      document.getElementById("question" + (current + 1))
-        .classList.add("active");
-
-      document.getElementById("question" + (current + 1))
-        .scrollIntoView({ behavior: "smooth", block: "center" });
-    }
-
-    function showFinalMessage() {
-      const selected = document.querySelector(
-        'input[name="q3"]:checked'
-      );
-
-      if (!selected) {
-        alert("Meri Queen, is sawaal ka jawab bhi select kijiye! 💖");
-        return;
-      }
-
-      document.getElementById("question3")
-        .classList.remove("active");
-
-      const finalMessage = document.getElementById("finalMessage");
-      finalMessage.classList.add("show");
-
-      finalMessage.scrollIntoView({
+      message.style.display = "block";
+      message.scrollIntoView({
         behavior: "smooth",
         block: "center"
       });
 
-      createHearts();
-    }
-
-    function createHearts() {
-      for (let i = 0; i < 18; i++) {
-        const heart = document.createElement("div");
-        heart.className = "floating-heart";
-        heart.textContent = ["❤️", "💕", "💖", "💗", "💘"][
+      for (let i = 0; i < 24; i++) {
+        const star = document.createElement("div");
+        star.className = "star";
+        star.textContent = ["❤️", "💕", "✨", "💗", "🌙"][
           Math.floor(Math.random() * 5)
         ];
 
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.fontSize = (18 + Math.random() * 18) + "px";
-        heart.style.animationDuration = (5 + Math.random() * 5) + "s";
-        heart.style.animationDelay = Math.random() * 2 + "s";
+        star.style.left = Math.random() * 100 + "vw";
+        star.style.fontSize = (16 + Math.random() * 18) + "px";
+        star.style.animationDuration = (3 + Math.random() * 4) + "s";
 
-        document.body.appendChild(heart);
+        document.body.appendChild(star);
 
-        setTimeout(() => heart.remove(), 11000);
+        setTimeout(() => star.remove(), 7500);
       }
     }
-
-    // A few gentle floating hearts on page load
-    createHearts();
   </script>
-
 
 
 
